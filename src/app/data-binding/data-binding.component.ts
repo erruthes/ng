@@ -12,6 +12,8 @@ export class DataBindingComponent implements OnInit {
   urlImagem = 'http://lorempixel.com/400/200/nature/';
 
   valorAtual = '';
+  valorSalvo = '';
+  ismouseOver = false;
 
   constructor() { }
 
@@ -33,6 +35,14 @@ export class DataBindingComponent implements OnInit {
   onKeyUp(event: KeyboardEvent) {
     // console.log((event.target as HTMLInputElement).value);
     this.valorAtual = (event.target as HTMLInputElement).value;
+  }
+
+  salvarValor(valor) {
+    this.valorSalvo = valor;
+  }
+
+  onMouseOverOut() {
+    this.ismouseOver = !this.ismouseOver;
   }
 
 }
