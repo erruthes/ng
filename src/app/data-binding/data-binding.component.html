@@ -74,3 +74,18 @@
     </div>
   </article>
 </section>
+<section class="event-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="botaoClicado()"
+        class="btn btn-primary">Me clique!</button>
+
+      <br><br>
+      <input (keyup)="onKeyUp($event)"
+        type="text"/>
+      <p>Valor atual: {{ valorAtual }}</p>
+    </div>
+
+  </article>
+</section>
