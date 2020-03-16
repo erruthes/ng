@@ -9,6 +9,7 @@ export class DataBindingComponent implements OnInit {
 
   url = 'http://www.github.com/erruthes';
   cursoAngular = true;
+  urlImagem = 'http://lorempixel.com/400/200/nature/';
 
   constructor() { }
 

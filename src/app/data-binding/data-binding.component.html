@@ -7,4 +7,11 @@
     <p>Resultado de 1 + 1 é: {{ getValor() }}</p>
   <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
   </article>
+
+  <article>
+    <h3>Property Binding</h3>
+    <!-- <img src="{{ urlImagem }}"> -->
+    <!-- <img bind-src="urlImagem"> -->
+    <img [src]="urlImagem">
+  </article>
 </section>
