@@ -15,6 +15,12 @@ export class DataBindingComponent implements OnInit {
   valorSalvo = '';
   ismouseOver = false;
 
+  nome = 'abc';
+  pessoa: any = {
+    nome: 'João',
+    idade: 12
+  }
+
   constructor() { }
 
   ngOnInit(): void {
