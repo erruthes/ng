@@ -1,5 +1,5 @@
 <p>data-binding works!</p>
-<section class="property-binding" style="border:1px solid">
+<!-- <section class="property-binding" style="border:1px solid">
   <article>
     <h3>Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
@@ -10,8 +10,8 @@
 
   <article>
     <h3>Property Binding</h3>
-    <!-- <img src="{{ urlImagem }}"> -->
-    <!-- <img bind-src="urlImagem"> -->
+    <!-- <img src="{{ urlImagem }}"> -- >
+    <!-- <img bind-src="urlImagem"> -- >
     <img [src]="urlImagem">
   </article>
 
@@ -78,7 +78,7 @@
   <article>
     <h3>Event binding</h3>
     <div>
-      <!-- on-click="botaoClicado()" -->
+      <!-- on-click="botaoClicado()" -- >
       <button
         (click)="botaoClicado()"
         class="btn btn-primary">Me clique!</button>
@@ -100,5 +100,32 @@
         Passe o mouse aqui.</span>
     </div>
 
+  </article>
+</section> -->
+<section class="tho-way_binding">
+  <article>
+    <h3>Two-way data binding</h3>
+    <div>
+      <input type="text"
+        [value]="nome"
+        (input)="nome = $event.target.value"
+      />
+      <input type="text"
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+      />
+      <input type="text"
+        [(ngModel)]="nome"
+      />
+      <!-- <input type="text"
+        bindon-ngModel="nome"
+      /> -->
+
+      <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+      <input type="text" [(ngModel)]="pessoa.nome" />
+      <input type="text" [(ngModel)]="pessoa.idade" />
+
+      <p>Você digitou: {{ nome }}</p>
+    </div>
   </article>
 </section>
