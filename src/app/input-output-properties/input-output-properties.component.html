@@ -4,6 +4,9 @@
 
       <app-input-property [nomeCurso]="nomeCurso" nomeTeste2="nomeCurso"></app-input-property>
 
-      <app-output-property></app-output-property>
+      <app-output-property
+        valor="10"
+        (mudouValor)="onMudouValor($event)"
+      ></app-output-property>
     </article>
   </section>
