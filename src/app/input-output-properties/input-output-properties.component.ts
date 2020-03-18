@@ -14,4 +14,9 @@ export class InputOutputPropertiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onMudouValor(evento) {
+    console.log(evento);
+
+  }
+
 }
