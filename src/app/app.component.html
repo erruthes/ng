@@ -6,4 +6,7 @@
 <app-data-binding></app-data-binding>
 -->
 
-<app-input-output-properties></app-input-output-properties>
+<!-- <app-input-output-properties></app-input-output-properties> -->
+<app-life-cicle [valorInicial]="valor" *ngIf="deletarCiclo == 'Deletar'"></app-life-cicle>
+<button (click)="mudarValor()"> Mudar Valor</button>
+<button (click)="destruirCiclo()">{{ deletarCiclo }}</button>

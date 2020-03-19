@@ -8,4 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ngLoiane';
   nomeCurso = 'C#';
+  valor = 5;
+  deletarCiclo = 'Deletar';
+
+  mudarValor() {
+    this.valor++;
+  }
+
+  destruirCiclo() {
+    if (this.deletarCiclo === 'Deletar') {
+      this.deletarCiclo = 'Inserir';
+    } else {
+      this.deletarCiclo = 'Deletar';
+    }
+  }
 }

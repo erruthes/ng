@@ -8,6 +8,7 @@ import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
 import { CursosModule } from './cursos/cursos.module';
 import { DataBindingModule } from './data-binding/data-binding.module';
 import { InputOutputPropertiesModule } from './input-output-properties/input-output-properties.module';
+import { LifeCicleModule } from './life-cicle/life-cicle.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { InputOutputPropertiesModule } from './input-output-properties/input-out
   imports: [
     BrowserModule,
     CursosModule,
+    LifeCicleModule,
     DataBindingModule,
     InputOutputPropertiesModule
   ],
