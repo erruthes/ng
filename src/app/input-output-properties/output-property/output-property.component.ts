@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 // import { EventEmitter } from 'events'; <= Referência errada!!!
 
 @Component({
@@ -11,19 +11,21 @@ export class OutputPropertyComponent implements OnInit {
   @Input() valor = 0;
   @Output() mudouValor = new EventEmitter();
 
+  @ViewChild('campoInput') campoValorInput: ElementRef; // HTMLElement;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   incrementa() {
-    this.valor++;
-    this.mudouValor.emit({valorNovo: this.valor});
+    this.campoValorInput.nativeElement.value++;
+    this.mudouValor.emit({valorNovo: this.campoValorInput.nativeElement.value});
   }
 
   decrementa() {
-    this.valor--;
-    this.mudouValor.emit({valorNovo: this.valor});
+    this.campoValorInput.nativeElement.value--;
+    this.mudouValor.emit({valorNovo: this.campoValorInput.nativeElement.value});
   }
 
 }
