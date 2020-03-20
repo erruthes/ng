@@ -120,6 +120,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngLoiane"
+    }
+  },
+  "defaultProject": "ngLoiane",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
