@@ -9,6 +9,7 @@ import { CursosModule } from './cursos/cursos.module';
 import { DataBindingModule } from './data-binding/data-binding.module';
 import { InputOutputPropertiesModule } from './input-output-properties/input-output-properties.module';
 import { LifeCicleModule } from './life-cicle/life-cicle.module';
+import { DiretivasModule } from './diretivas/diretivas.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LifeCicleModule } from './life-cicle/life-cicle.module';
     CursosModule,
     LifeCicleModule,
     DataBindingModule,
+    DiretivasModule,
     InputOutputPropertiesModule
   ],
   providers: [],
