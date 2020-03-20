@@ -1,5 +1,17 @@
-import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  Input,
+  OnDestroy
+} from '@angular/core';
 
+// tslint:disable-next-line: no-conflicting-lifecycle
 @Component({
   selector: 'app-life-cicle',
   templateUrl: './life-cicle.component.html',
@@ -13,7 +25,8 @@ export class LifeCicleComponent
     AfterContentInit,
     AfterContentChecked,
     AfterViewInit,
-    AfterViewChecked {
+    AfterViewChecked,
+    OnDestroy {
 
   @Input() valorInicial = 10;
 
@@ -23,7 +36,6 @@ export class LifeCicleComponent
 
   ngOnChanges() {
     this.log('ngOnChanges');
-
   }
 
   ngOnInit(): void {

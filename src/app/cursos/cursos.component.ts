@@ -15,7 +15,7 @@ export class CursosComponent implements OnInit {
   constructor(cursosService: CursosService) {
     this.nomePortal = 'http://github.com/erruthes';
 
-    //this.cursos = ['Java', 'C#', 'AngularCli'];
+    // this.cursos = ['Java', 'C#', 'AngularCli'];
     this.cursos = cursosService.getCursos();
 
     // Código replicado no template para iterar os cursos do array
