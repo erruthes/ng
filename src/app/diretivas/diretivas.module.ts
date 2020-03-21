@@ -9,6 +9,6 @@ import { NgIfComponent } from './ng-if/ng-if.component';
   imports: [
     CommonModule
   ],
-  exports: [NgIf]
+  exports: [NgIfComponent]
 })
 export class DiretivasModule { }

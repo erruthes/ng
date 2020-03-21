@@ -1,1 +1,31 @@
 <p>ng-if works!</p>
+
+<div *ngIf="cursos.length > 0;else templateElse">
+  Lista de Cursos.
+</div>
+
+<ng-template #templateElse>
+  Não há cursos.
+</ng-template>
+
+
+<div *ngIf="mostrarCursos;else templateElse2">
+  Lista de Cursos.
+</div>
+
+<ng-template #templateElse2>
+  Não há cursos.
+</ng-template>
+
+<br>
+<button (click)="onMostrarCursos()">Mostrar/Esconder cursos</button>
+
+<br>
+<h5>Hidden como Alternativa</h5>
+<div [hidden]="mostrarCursos">
+  Lista de Cursos.
+</div>
+
+<div [hidden]="!mostrarCursos">
+  Não há cursos.
+</div>
