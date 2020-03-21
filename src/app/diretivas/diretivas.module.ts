@@ -7,6 +7,7 @@ import { NgForComponent } from './ng-for/ng-for.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
 
 
 
@@ -17,7 +18,8 @@ import { OperadorElvisComponent } from './operador-elvis/operador-elvis.componen
     NgForComponent,
     NgClassComponent,
     NgStyleComponent,
-    OperadorElvisComponent
+    OperadorElvisComponent,
+    NgContentComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { OperadorElvisComponent } from './operador-elvis/operador-elvis.componen
     NgForComponent,
     NgClassComponent,
     NgStyleComponent,
-    OperadorElvisComponent
+    OperadorElvisComponent,
+    NgContentComponent
   ]
 })
 export class DiretivasModule { }
