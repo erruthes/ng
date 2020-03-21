@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgIfComponent implements OnInit {
 
+  cursos: string[] = ['AngularCli'];
+  mostrarCursos = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onMostrarCursos(){
+    this.mostrarCursos = !this.mostrarCursos;
   }
 
 }
