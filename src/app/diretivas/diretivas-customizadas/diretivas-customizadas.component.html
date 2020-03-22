@@ -1,5 +1,5 @@
 <p>diretivas-customizadas works!</p>
-<p appFundoAmarelo>Fundo Amarelo</p>
+<!-- <p appFundoAmarelo>Fundo Amarelo</p>
 <button appFundoAmareloButton>Botão com Diretiva Customizada</button>
 
 <p appHighlightMouse>
@@ -9,7 +9,19 @@
 
 <!-- <p appHighlight [defaultColor]="'green'" [highlightColor]="'blue'">
   Texto com highlight com cores customizadas.
-</p> -->
+</p> -- >
 <p [appHighlight]="'blue'" [defaultColor]="'green'">
   Texto com highlight com cores customizadas.
-</p>
+</p> -->
+
+
+<div *ngIf="mostrarCursos">
+  Lista de Cursos.
+</div>
+
+<div *appNgElse="mostrarCursos">
+  Não há cursos.
+</div>
+
+<br>
+<button (click)="onMostrarCursos()">Toggle MostrarCursos</button>
