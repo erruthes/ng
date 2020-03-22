@@ -15,7 +15,7 @@ export class NgIfComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onMostrarCursos(){
+  onMostrarCursos() {
     this.mostrarCursos = !this.mostrarCursos;
   }
 
