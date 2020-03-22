@@ -1,3 +1,4 @@
+import { ServicosModule } from './servicos/servicos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -28,7 +29,8 @@ import { DiretivasModule } from './diretivas/diretivas.module';
     DiretivasModule,
     InputOutputPropertiesModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    ServicosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
