@@ -1,7 +1,12 @@
+import { PipesModule } from './pipes/pipes.module';
 import { LogService } from './shared/log.service';
 import { ServicosModule } from './servicos/servicos.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt');
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -31,10 +36,12 @@ import { DiretivasModule } from './diretivas/diretivas.module';
     InputOutputPropertiesModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    ServicosModule
+    ServicosModule,
+    PipesModule
   ],
   providers: [
-    LogService
+    LogService,
+     {provide: LOCALE_ID, useValue: 'pt'}
   ],
   bootstrap: [AppComponent]
 })
