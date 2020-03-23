@@ -1,3 +1,4 @@
+import { LogService } from './shared/log.service';
 import { ServicosModule } from './servicos/servicos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -32,7 +33,9 @@ import { DiretivasModule } from './diretivas/diretivas.module';
     MatSliderModule,
     ServicosModule
   ],
-  providers: [],
+  providers: [
+    LogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
