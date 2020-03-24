@@ -18,11 +18,18 @@ export class ExemplosPipesComponent implements OnInit {
     price: 44.99,
     dateRelease: new Date(2016, 5, 23), // o indice di mes começa em 0
     url: 'http://a.co/glqjpRP'
-  }
+  };
+  livros = ['AngularCli', 'C#'];
+  filtro: '';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addLivro(livro: any) {
+    this.livros.push(livro);
+    console.log(livro);
   }
 
 }
