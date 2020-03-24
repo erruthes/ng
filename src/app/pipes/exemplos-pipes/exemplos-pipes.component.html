@@ -1,6 +1,6 @@
 <p>exemplos-pipes works!</p>
 
-<p> Título: {{ book.title | uppercase | lowercase }}</p>
+<p> Título: {{ book.title | uppercase | lowercase | camelCase }}</p>
 <p> Esrtrelas: {{ book.rating | number:'1.1-2' }}</p>
 <p> Páginas: {{ book.numPages | number }}</p>
 <p> Preço: {{ book.price | currency:'BRL':true }}</p>
