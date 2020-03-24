@@ -1,3 +1,4 @@
+import { SettingsService } from './shared/settings.service';
 import { PipesModule } from './pipes/pipes.module';
 import { LogService } from './shared/log.service';
 import { ServicosModule } from './servicos/servicos.module';
@@ -41,7 +42,12 @@ import { DiretivasModule } from './diretivas/diretivas.module';
   ],
   providers: [
     LogService,
-     {provide: LOCALE_ID, useValue: 'pt'}
+    //  {provide: LOCALE_ID, useValue: 'pt-BR'},
+     SettingsService,
+     { provide: LOCALE_ID,
+      deps: [SettingsService],
+      useFactory: (settingsService) => settingsService.getLocale()
+    }
   ],
   bootstrap: [AppComponent]
 })
