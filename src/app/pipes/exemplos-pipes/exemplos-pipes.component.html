@@ -7,16 +7,32 @@
 <p> Data Lançamento: {{ book.dateRelease | date:'dd/MM/yyyy' }}</p>
 <p> Url: {{ book.url }}</p>
 
-<br>
-<p>{{ book | json }}</p>
+<!-- <br>
+<p>{{ book | json }}</p> -->
 
 <br>
 <input type="text" [(ngModel)]="filtro" #filtroInput>
 <br>
 <input type="text" #novoValor>
 <button (click)="addLivro(novoValor.value)">Novo Livro</button>
+<h5>Filtro Array Puro</h5>
 <ul>
   <li *ngFor="let liv of livros | filtroArray:filtroInput.value">
+    {{ liv }}
+  </li>
+</ul>
+
+<br>
+<h5>Filtro Arrray Inpuro</h5>
+<ul>
+  <li *ngFor="let liv of livros | filtroArrayInpuro:filtroInput.value">
+    {{ liv }}
+  </li>
+</ul>
+<br>
+<h5>Maneira correta de fazer Filtros em Projetos</h5>
+<ul>
+  <li *ngFor="let liv of obterLivros()">
     {{ liv }}
   </li>
 </ul>

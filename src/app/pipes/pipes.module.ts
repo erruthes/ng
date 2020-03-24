@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './camel-case.pipe';
 import { FiltroArrayPipe } from './filtro-array.pipe';
+import { FiltroArrayInpuroPipe } from './filtro-array-inpuro.pipe';
 
 
 
@@ -11,7 +12,8 @@ import { FiltroArrayPipe } from './filtro-array.pipe';
   declarations: [
     ExemplosPipesComponent,
     CamelCasePipe,
-    FiltroArrayPipe
+    FiltroArrayPipe,
+    FiltroArrayInpuroPipe
   ],
   imports: [
     CommonModule,
