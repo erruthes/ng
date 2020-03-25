@@ -8,7 +8,6 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt');
 
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 
