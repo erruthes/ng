@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 // import { registerLocaleData } from '@angular/common';
 // import localePt from '@angular/common/locales/pt';
@@ -21,6 +23,26 @@ export class ExemplosPipesComponent implements OnInit {
   };
   livros = ['AngularCli', 'C#'];
   filtro: '';
+
+  valorAsync = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Valor assíncrono'), 2000);
+  });
+
+  // valorAsync2 = Observable.interval(2000).map(valor => 'Valor Assíncrono 2');
+  valorAsync2 = interval(3000).pipe(map(valor => 'Valor Assincrono 3'));
+
+  valorAsync3 = new Observable(observer => {
+    setTimeout(() => {
+      observer.next('Valor Assíncrono 2');
+    }, 5000);
+  });
+
+
+
+  // valorAsync2 = new Observable(observer => {
+  //   setTimeout(() => observer.map(valor => '')
+  //             , 2000);
+  // });
 
   constructor() { }
 
