@@ -1,13 +1,11 @@
-import { SettingsService } from './shared/settings.service';
-import { PipesModule } from './pipes/pipes.module';
-import { LogService } from './shared/log.service';
-import { ServicosModule } from './servicos/servicos.module';
+import { routing } from './aap.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt');
-
+import 'materialize-css';
+// import { MaterializeModule } from 'angular2-materialize';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -21,6 +19,11 @@ import { DataBindingModule } from './data-binding/data-binding.module';
 import { InputOutputPropertiesModule } from './input-output-properties/input-output-properties.module';
 import { LifeCicleModule } from './life-cicle/life-cicle.module';
 import { DiretivasModule } from './diretivas/diretivas.module';
+import { SettingsService } from './shared/settings.service';
+import { PipesModule } from './pipes/pipes.module';
+import { LogService } from './shared/log.service';
+import { ServicosModule } from './servicos/servicos.module';
+import { RotasModule } from './rotas/rotas.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { DiretivasModule } from './diretivas/diretivas.module';
     BrowserAnimationsModule,
     MatSliderModule,
     ServicosModule,
-    PipesModule
+    PipesModule,
+    RotasModule,
+    routing
   ],
   providers: [
     LogService,
