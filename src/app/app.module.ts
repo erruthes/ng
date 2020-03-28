@@ -4,11 +4,12 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt');
-import 'materialize-css';
-// import { MaterializeModule } from 'angular2-materialize';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
@@ -33,13 +34,18 @@ import { RotasModule } from './rotas/rotas.module';
   ],
   imports: [
     BrowserModule,
+
+    MatMenuModule,
+    MatIconModule,
+    MatSliderModule,
+    MatToolbarModule,
+
     CursosModule,
     LifeCicleModule,
     DataBindingModule,
     DiretivasModule,
     InputOutputPropertiesModule,
     BrowserAnimationsModule,
-    MatSliderModule,
     ServicosModule,
     PipesModule,
     RotasModule,
