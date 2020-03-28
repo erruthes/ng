@@ -1,5 +1,4 @@
 <p>rotas works!</p>
-<router-outlet></router-outlet>
 
 <mat-menu #appMenu="matMenu">
   <button mat-menu-item>Home</button>
@@ -13,18 +12,21 @@
 <br>
 
 <mat-toolbar color="primary">
-  <span><a href="#">Home</a></span>
-  <span><a href="#">Login</a></span>
-  <span><a href="#">Cursos</a></span>
+  <span><a >Home</a></span>
+  <span><a >Login</a></span>
+  <span><a >Cursos</a></span>
 </mat-toolbar>
 
 <nav>
   <div class="nav-wrapper purple darken-4">
-    <!-- <a href="#" class="brand-logo right">Logo</a> -->
+    <a routerLink="" class="brand-logo right">Rotas Ng2</a>
     <ul id="nav-mobile" class="left">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Cursos</a></li>
+      <li><a routerLink="login">Login</a></li>
+      <li><a routerLink="cursos">Cursos</a></li>
     </ul>
   </div>
 </nav>
+
+<div classs="container">
+  <router-outlet></router-outlet>
+</div>
