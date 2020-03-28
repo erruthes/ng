@@ -38,17 +38,30 @@
 
 <app-rotas></app-rotas>
 
-<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
-  <li>
-    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-</ul>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item>Home</button>
+  <button mat-menu-item>Login</button>
+  <button mat-menu-item>Cursos</button>
+</mat-menu>
+<button mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<br>
+
+<mat-toolbar color="primary">
+  <span><a href="#">Home</a></span>
+  <span><a href="#">Login</a></span>
+  <span><a href="#">Cursos</a></span>
+</mat-toolbar>
+
+<nav>
+  <div class="nav-wrapper purple darken-4">
+    <!-- <a href="#" class="brand-logo right">Logo</a> -->
+    <ul id="nav-mobile" class="left">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Cursos</a></li>
+    </ul>
+  </div>
+</nav>
