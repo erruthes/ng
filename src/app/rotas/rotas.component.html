@@ -1,9 +1,9 @@
 <p>rotas works!</p>
 
 <mat-menu #appMenu="matMenu">
-  <button mat-menu-item>Home</button>
-  <button mat-menu-item>Login</button>
-  <button mat-menu-item>Cursos</button>
+  <button mat-menu-item routerLinkActive="purple darken-4" [routerLinkActiveOptions]="{exact:true}" routerLink="">Home</button>
+  <button mat-menu-item routerLinkActive="purple darken-4" routerLink="login">Login</button>
+  <button mat-menu-item routerLinkActive="purple darken-4" routerLink="cursos">Cursos</button>
 </mat-menu>
 <button mat-icon-button [matMenuTriggerFor]="appMenu">
   <mat-icon>more_vert</mat-icon>
@@ -12,17 +12,17 @@
 <br>
 
 <mat-toolbar color="primary">
-  <span><a >Home</a></span>
-  <span><a >Login</a></span>
-  <span><a >Cursos</a></span>
+  <span routerLinkActive="purple darken-4" [routerLinkActiveOptions]="{exact:true}"><a routerLink="" >Home</a></span>
+  <span routerLinkActive="purple darken-4"><a routerLink="login" >Login</a></span>
+  <span routerLinkActive="purple darken-4"><a routerLink="cursos" >Cursos</a></span>
 </mat-toolbar>
 
 <nav>
   <div class="nav-wrapper purple darken-4">
     <a routerLink="" class="brand-logo right">Rotas Ng2</a>
     <ul id="nav-mobile" class="left">
-      <li><a routerLink="login">Login</a></li>
-      <li><a routerLink="cursos">Cursos</a></li>
+      <li routerLinkActive="active"><a routerLink="login">Login</a></li>
+      <li routerLinkActive="active"><a routerLink="cursos">Cursos</a></li>
     </ul>
   </div>
 </nav>
