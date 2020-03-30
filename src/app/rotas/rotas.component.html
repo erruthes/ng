@@ -4,6 +4,7 @@
   <button mat-menu-item routerLinkActive="purple darken-4" [routerLinkActiveOptions]="{exact:true}" routerLink="">Home</button>
   <button mat-menu-item routerLinkActive="purple darken-4" routerLink="login">Login</button>
   <button mat-menu-item routerLinkActive="purple darken-4" routerLink="cursos">Cursos</button>
+  <button mat-menu-item routerLinkActive="purple darken-4" [routerLink]="['curso', idCurso.value]">Curso com Id</button>
 </mat-menu>
 <button mat-icon-button [matMenuTriggerFor]="appMenu">
   <mat-icon>more_vert</mat-icon>
@@ -15,6 +16,7 @@
   <span routerLinkActive="purple darken-4" [routerLinkActiveOptions]="{exact:true}"><a routerLink="" >Home</a></span>
   <span routerLinkActive="purple darken-4"><a routerLink="login" >Login</a></span>
   <span routerLinkActive="purple darken-4"><a routerLink="cursos" >Cursos</a></span>
+  <span routerLinkActive="purple darken-4"><a [routerLink]="['curso', idCurso.value]" >Curso com Id</a></span>
 </mat-toolbar>
 
 <nav>
@@ -23,10 +25,15 @@
     <ul id="nav-mobile" class="left">
       <li routerLinkActive="active"><a routerLink="login">Login</a></li>
       <li routerLinkActive="active"><a routerLink="cursos">Cursos</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Cursos com Id</a></li>
     </ul>
   </div>
 </nav>
 
+<br>
 <div classs="container">
+  <p>Entre com o Id do Curso</p>
+  <input #idCurso (input)="0">
+
   <router-outlet></router-outlet>
 </div>

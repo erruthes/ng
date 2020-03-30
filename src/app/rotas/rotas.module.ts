@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { RotasComponent } from './rotas.component';
+import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 
 
@@ -19,7 +20,8 @@ import { RotasComponent } from './rotas.component';
     RotasComponent,
     HomeComponent,
     LoginComponent,
-    CursosComponent
+    CursosComponent,
+    CursoDetalheComponent
   ],
   imports: [
     CommonModule,
