@@ -6,12 +6,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { RotasComponent } from './rotas.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursosService } from './cursos/cursos.service';
+import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
 
 
@@ -21,7 +24,8 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
     HomeComponent,
     LoginComponent,
     CursosComponent,
-    CursoDetalheComponent
+    CursoDetalheComponent,
+    CursoNaoEncontradoComponent
   ],
   imports: [
     CommonModule,
@@ -31,9 +35,13 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
     MatIconModule,
     MatSliderModule,
     MatToolbarModule,
+    MatListModule,
   ],
   exports: [
     RotasComponent
+  ],
+  providers: [
+    CursosService
   ]
 })
 export class RotasModule { }
