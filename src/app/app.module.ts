@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app.routing.module';
 // import { routing } from './aap.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -50,6 +51,7 @@ import { RotasModule } from './rotas/rotas.module';
     PipesModule,
     RotasModule,
     // routing
+    // AppRoutingModule
   ],
   providers: [
     LogService,

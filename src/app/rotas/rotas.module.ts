@@ -1,4 +1,5 @@
-import { routing } from './../aap.routing';
+import { RouterModule } from '@angular/router';
+// import { routing } from './../aap.routing';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,9 +13,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { RotasComponent } from './rotas.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
 import { CursosService } from './cursos/cursos.service';
-import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
+import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
+import { AppRoutingModule } from '../app.routing.module';
 
 
 
@@ -29,7 +31,9 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
   ],
   imports: [
     CommonModule,
-    routing,
+    // routing,
+    AppRoutingModule,
+    RouterModule,
 
     MatMenuModule,
     MatIconModule,

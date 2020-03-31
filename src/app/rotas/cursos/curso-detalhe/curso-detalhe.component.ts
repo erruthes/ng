@@ -1,4 +1,4 @@
-import { CursosService } from './../cursos/cursos.service';
+import { CursosService } from '../cursos.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -29,12 +29,11 @@ export class CursoDetalheComponent implements OnInit, OnDestroy {
                                         this.id = params.id;
                                         // console.log('Id:' + this.id);
                                         this.curso = this.cursosService.getCurso(this.id);
-                                      }
-                                    );
 
-    if (this.curso == null) {
-      this.router.navigate(['cursoNaoEncontrado']);
-    }
+                                        if (this.curso == null) {
+                                          this.router.navigate(['cursoNaoEncontrado']);
+                                        }                                                                          }
+                                    );
   }
 
   ngOnDestroy() {
