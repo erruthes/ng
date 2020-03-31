@@ -1,4 +1,4 @@
-import { routing } from './aap.routing';
+// import { routing } from './aap.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -49,7 +49,7 @@ import { RotasModule } from './rotas/rotas.module';
     ServicosModule,
     PipesModule,
     RotasModule,
-    routing
+    // routing
   ],
   providers: [
     LogService,
