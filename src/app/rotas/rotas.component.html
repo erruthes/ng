@@ -5,6 +5,7 @@
   <button mat-menu-item routerLinkActive="purple darken-4" routerLink="login">Login</button>
   <button mat-menu-item routerLinkActive="purple darken-4" routerLink="cursos">Cursos</button>
   <button mat-menu-item routerLinkActive="purple darken-4" [routerLink]="['curso', idCurso.value]">Curso com Id</button>
+  <button mat-menu-item routerLinkActive="purple darken-4" routerLink="alunos">Alunos</button>
 </mat-menu>
 <button mat-icon-button [matMenuTriggerFor]="appMenu">
   <mat-icon>more_vert</mat-icon>
@@ -17,6 +18,7 @@
   <span routerLinkActive="purple darken-4"><a routerLink="login" >Login</a></span>
   <span routerLinkActive="purple darken-4"><a routerLink="cursos" >Cursos</a></span>
   <span routerLinkActive="purple darken-4"><a [routerLink]="['curso', idCurso.value]" >Curso com Id</a></span>
+  <span routerLinkActive="purple darken-4"><a routerLink="alunos" >Alunos</a></span>
 </mat-toolbar>
 
 <nav>
@@ -26,6 +28,7 @@
       <li routerLinkActive="active"><a routerLink="login">Login</a></li>
       <li routerLinkActive="active"><a routerLink="cursos" [queryParams]="{pagina:1}">Cursos</a></li>
       <li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Cursos com Id</a></li>
+      <li routerLinkActive="active"><a routerLink="alunos">Alunos</a></li>
     </ul>
   </div>
 </nav>
