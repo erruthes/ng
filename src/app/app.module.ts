@@ -1,3 +1,4 @@
+import { AlunosModule } from './alunos/alunos.module';
 import { AppRoutingModule } from './app.routing.module';
 // import { routing } from './aap.routing';
 import { BrowserModule } from '@angular/platform-browser';
@@ -52,12 +53,13 @@ import { RotasModule } from './rotas/rotas.module';
     RotasModule,
     // routing
     // AppRoutingModule
+    AlunosModule,
   ],
   providers: [
     LogService,
-    //  {provide: LOCALE_ID, useValue: 'pt-BR'},
-     SettingsService,
-     { provide: LOCALE_ID,
+    // {provide: LOCALE_ID, useValue: 'pt-BR'},
+    SettingsService,
+    { provide: LOCALE_ID,
       deps: [SettingsService],
       useFactory: (settingsService) => settingsService.getLocale()
     }
