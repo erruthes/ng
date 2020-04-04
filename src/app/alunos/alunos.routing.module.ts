@@ -8,8 +8,8 @@ import { AlunosFormComponent } from './alunos-form/alunos-form.component';
 const alunoRoutes: Routes = [
   { path: 'alunos', component: AlunosComponent,
     children: [
-      { path: 'novo', component: AlunosFormComponent },
       { path: ':id', component: AlunosDetalheComponent },
+      { path: 'novo', component: AlunosFormComponent },
       { path: ':id/edit', component: AlunosFormComponent }
     ]},
   // { path: 'alunos/novo', component: AlunosFormComponent },

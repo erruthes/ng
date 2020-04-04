@@ -12,6 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+// import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
@@ -41,6 +42,7 @@ import { RotasModule } from './rotas/rotas.module';
     MatIconModule,
     MatSliderModule,
     MatToolbarModule,
+    // MatListModule,
 
     CursosModule,
     LifeCicleModule,
