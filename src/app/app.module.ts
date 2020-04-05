@@ -1,5 +1,3 @@
-import { AlunosModule } from './alunos/alunos.module';
-import { AppRoutingModule } from './app.routing.module';
 // import { routing } from './aap.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -28,6 +26,8 @@ import { PipesModule } from './pipes/pipes.module';
 import { LogService } from './shared/log.service';
 import { ServicosModule } from './servicos/servicos.module';
 import { RotasModule } from './rotas/rotas.module';
+import { AppRoutingModule } from './app.routing.module';
+// import { AlunosModule } from './alunos/alunos.module';
 
 @NgModule({
   declarations: [
@@ -54,8 +54,8 @@ import { RotasModule } from './rotas/rotas.module';
     PipesModule,
     RotasModule,
     // routing
-    // AppRoutingModule
-    AlunosModule,
+    AppRoutingModule,
+    // AlunosModule,
   ],
   providers: [
     LogService,
