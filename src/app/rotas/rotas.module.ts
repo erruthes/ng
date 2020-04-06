@@ -17,7 +17,7 @@ import { RotasComponent } from './rotas.component';
 // import { CursosService } from './cursos/cursos.service';
 // import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 // import { CursosRoutingModule } from './cursos/cursos.routing.module';
-import { CursosModule } from './cursos/cursos.module';
+// import { CursosModule } from './cursos/cursos.module';
 // import { AlunosModule } from './../alunos/alunos.module';
 // import { AlunosRoutingModule } from './../alunos/alunos.routing.module';
 import { RotasRoutingModule } from './rotas.routing.module';
@@ -38,7 +38,7 @@ import { RotasRoutingModule } from './rotas.routing.module';
     RotasRoutingModule,
     // AlunosModule,
     // AlunosRoutingModule,
-    CursosModule,
+    // CursosModule,
 
     MatMenuModule,
     MatIconModule,

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 // import { AlunosComponent } from './../alunos/alunos.component';
 
 const rotasRoutes: Routes = [
+  { path: 'cursos', loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule) },
   // { path: 'alunos', component: AlunosComponent },
   // { path: 'alunos', loadChildren: 'app/alunos/alunos.module#AlunosModule' },
   { path: 'alunos', loadChildren: () => import('./../alunos/alunos.module').then(m => m.AlunosModule) },
