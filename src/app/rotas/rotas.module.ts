@@ -17,8 +17,8 @@ import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.comp
 import { CursosService } from './cursos/cursos.service';
 import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 import { CursosRoutingModule } from './cursos/cursos.routing.module';
-import { AlunosModule } from './../alunos/alunos.module';
-import { AlunosRoutingModule } from './../alunos/alunos.routing.module';
+// import { AlunosModule } from './../alunos/alunos.module';
+// import { AlunosRoutingModule } from './../alunos/alunos.routing.module';
 import { RotasRoutingModule } from './rotas.routing.module';
 
 
@@ -34,9 +34,9 @@ import { RotasRoutingModule } from './rotas.routing.module';
   imports: [
     CommonModule,
     CursosRoutingModule,
-    AlunosModule,
     RotasRoutingModule,
-    AlunosRoutingModule,
+    // AlunosModule,
+    // AlunosRoutingModule,
 
     MatMenuModule,
     MatIconModule,
