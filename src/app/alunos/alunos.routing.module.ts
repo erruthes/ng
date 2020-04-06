@@ -6,7 +6,7 @@ import { AlunosDetalheComponent } from './alunos-detalhe/alunos-detalhe.componen
 import { AlunosFormComponent } from './alunos-form/alunos-form.component';
 
 const alunoRoutes: Routes = [
-  { path: 'alunos', component: AlunosComponent,
+  { path: '', component: AlunosComponent,
     children: [
       { path: ':id', component: AlunosDetalheComponent },
       { path: 'novo', component: AlunosFormComponent },
