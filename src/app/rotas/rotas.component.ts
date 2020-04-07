@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RotasComponent implements OnInit {
 
-  constructor() { }
+  mostrarMenu = false;
+
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+    this.authService.mostrarMenuEmitter.subscribe(
+      (mostrar: boolean) => this.mostrarMenu = mostrar
+    );
   }
 
 }

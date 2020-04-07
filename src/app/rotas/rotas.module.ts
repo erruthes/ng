@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 // import { RouterModule } from '@angular/router';
 // import { routing } from './../aap.routing';
 import { NgModule } from '@angular/core';
@@ -8,9 +9,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './login/auth.service';
 import { RotasComponent } from './rotas.component';
 // import { CursosComponent } from './cursos/cursos.component';
 // import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
@@ -34,6 +38,8 @@ import { RotasRoutingModule } from './rotas.routing.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+
     // CursosRoutingModule,
     RotasRoutingModule,
     // AlunosModule,
@@ -45,12 +51,15 @@ import { RotasRoutingModule } from './rotas.routing.module';
     MatSliderModule,
     MatToolbarModule,
     MatListModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   exports: [
     RotasComponent
   ],
   providers: [
     // CursosService
+    AuthService
   ]
 })
 export class RotasModule { }
