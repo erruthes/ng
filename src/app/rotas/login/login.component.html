@@ -1,1 +1,31 @@
 <p>login works!</p>
+
+<div class="example-form">
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Usuário</mat-label>
+      <input matInput
+        [(ngModel)]="usuario.nome"
+        id="nome"
+        placeholder="Usuário">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input matInput
+        [(ngModel)]="usuario.senha"
+        id="senha"
+        type="password"
+        placeholder="senha" >
+    </mat-form-field>
+  </p>
+  <p>
+    <button mat-raised-button
+      type="submit"
+      color="primary"
+      (click)="logar()">Entrar
+      <mat-icon aria-hidden="true" aria-label="Logar">send</mat-icon>
+    </button>
+  </p>
+</div>
