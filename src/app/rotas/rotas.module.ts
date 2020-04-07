@@ -25,6 +25,7 @@ import { RotasComponent } from './rotas.component';
 // import { AlunosModule } from './../alunos/alunos.module';
 // import { AlunosRoutingModule } from './../alunos/alunos.routing.module';
 import { RotasRoutingModule } from './rotas.routing.module';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { RotasRoutingModule } from './rotas.routing.module';
   ],
   providers: [
     // CursosService
-    AuthService
+    AuthService,
+    AuthGuard
   ]
 })
 export class RotasModule { }
