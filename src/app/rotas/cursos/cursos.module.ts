@@ -8,6 +8,7 @@ import { CursosRoutingModule } from './cursos.routing.module';
 import { CursosService } from './cursos.service';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursosGuard } from './guards/cursos.guard';
 
 
 
@@ -27,7 +28,8 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
     CursosComponent
   ],
   providers: [
-    CursosService
+    CursosService,
+    CursosGuard
   ]
 })
 export class CursosModule { }
