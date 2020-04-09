@@ -12,6 +12,7 @@ export class AlunosGuard implements CanActivateChild {
 
     // console.log(next);
     // console.log(state);
+    console.log('AlunosGuard.canActivateChild');
 
     if (state.url.includes('edit')) {
     //   alert('Usuário não possui acesso para Editar um Aluno');
