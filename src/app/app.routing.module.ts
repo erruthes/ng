@@ -2,6 +2,7 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
 import { NgModule } from '@angular/core';
 
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './rotas/guards/auth.guard';
 
 // import { CursosComponent } from './rotas/cursos/cursos.component';
 // import { LoginComponent } from './rotas/login/login.component';
@@ -15,7 +16,10 @@ const appRoutes: Routes = [
   // { path: 'login', component: LoginComponent },
   // { path: 'cursoNaoEncontrado', component: CursoNaoEncontradoComponent },
   // { path: '', component: HomeComponent }
-  { path: '**', component: PaginaNaoEncontradaComponent }
+  { path: '**',
+    component: PaginaNaoEncontradaComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
