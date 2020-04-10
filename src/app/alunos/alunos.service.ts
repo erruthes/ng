@@ -20,6 +20,7 @@ export class AlunosService {
   }
 
   getAluno(id) {
+    // tslint:disable-next-line: triple-equals
     return this.alunos.find(f => f.id == id);
   }
 }
