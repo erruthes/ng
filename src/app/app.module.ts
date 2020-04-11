@@ -1,3 +1,4 @@
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 // import { routing } from './aap.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -33,7 +34,8 @@ import { AppRoutingModule } from './app.routing.module';
   declarations: [
     AppComponent,
     MeuPrimeiroComponent,
-    MeuPrimeiro2Component
+    MeuPrimeiro2Component,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
     BrowserModule,

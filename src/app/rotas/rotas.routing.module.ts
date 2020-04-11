@@ -25,9 +25,13 @@ const rotasRoutes: Routes = [
     // canActivateChild: [AlunosGuard]
   },
   { path: 'login', component: LoginComponent },
-  { path: '',
+  { path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard]
+  },
+  { path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 
