@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   // { path: '', component: HomeComponent }
   { path: '**',
     component: PaginaNaoEncontradaComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   }
 ];
 
