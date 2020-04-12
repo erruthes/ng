@@ -16,10 +16,10 @@ const appRoutes: Routes = [
   // { path: 'login', component: LoginComponent },
   // { path: 'cursoNaoEncontrado', component: CursoNaoEncontradoComponent },
   // { path: '', component: HomeComponent }
-  { path: '**',
-    component: PaginaNaoEncontradaComponent,
-    // canActivate: [AuthGuard]
-  }
+  // { path: '**',
+  //   component: PaginaNaoEncontradaComponent,
+  //   // canActivate: [AuthGuard]
+  // }
 ];
 
 @NgModule({

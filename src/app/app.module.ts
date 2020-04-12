@@ -54,7 +54,7 @@ import { AppRoutingModule } from './app.routing.module';
     BrowserAnimationsModule,
     ServicosModule,
     PipesModule,
-    RotasModule,
+    // RotasModule,
     // routing
     AppRoutingModule,
     // AlunosModule,
