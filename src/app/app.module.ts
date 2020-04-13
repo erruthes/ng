@@ -1,4 +1,3 @@
-import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 // import { routing } from './aap.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -29,6 +28,8 @@ import { ServicosModule } from './servicos/servicos.module';
 import { RotasModule } from './rotas/rotas.module';
 import { AppRoutingModule } from './app.routing.module';
 // import { AlunosModule } from './alunos/alunos.module';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { FormulariosModule } from './formularios/formularios.module';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AppRoutingModule } from './app.routing.module';
     // routing
     AppRoutingModule,
     // AlunosModule,
+    FormulariosModule
   ],
   providers: [
     LogService,
