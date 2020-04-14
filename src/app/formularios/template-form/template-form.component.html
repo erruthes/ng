@@ -3,7 +3,7 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div class="form-group">
     <label for="nome">Nome</label>
-    <input type="text"
+    <input type="text" required
       name="nome"
       [(ngModel)]="usuario.nome"
       id="nome"
@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email"
+    <input type="email" required email
       name="email"
       [(ngModel)]="usuario.email"
       id="email"
