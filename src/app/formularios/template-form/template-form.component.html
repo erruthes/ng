@@ -47,7 +47,7 @@
       O Email é inválido.
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 </form>
 
 
@@ -87,6 +87,6 @@
       {{ email2.className }}
     </div> -->
   </div>
-  <button type="submit" class="btn btn-primary purple">Submit</button>
+  <button type="submit" class="btn btn-primary purple" [disabled]="!f2.valid">Submit</button>
 </form>
 
