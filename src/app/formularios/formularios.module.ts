@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import {MatInputModule} from '@angular/material/input';
+
 import { FormulariosRoutingModule } from './formularios-routing.module';
 import { FormulariosComponent } from './formularios.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
@@ -17,7 +19,9 @@ import { DataFormComponent } from './data-form/data-form.component';
   imports: [
     CommonModule,
     FormsModule,
-    FormulariosRoutingModule
+    FormulariosRoutingModule,
+
+    MatInputModule
   ],
   exports: [
     FormulariosComponent
