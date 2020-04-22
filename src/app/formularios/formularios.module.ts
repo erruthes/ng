@@ -9,6 +9,7 @@ import { FormulariosComponent } from './formularios.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { DataFormComponent } from './data-form/data-form.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
+import { FormControlErroComponent } from './form-control-erro/form-control-erro.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormDebugComponent } from './form-debug/form-debug.component';
     FormulariosComponent,
     TemplateFormComponent,
     DataFormComponent,
-    FormDebugComponent
+    FormDebugComponent,
+    FormControlErroComponent
   ],
   imports: [
     CommonModule,

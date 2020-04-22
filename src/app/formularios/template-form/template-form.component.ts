@@ -24,4 +24,15 @@ export class TemplateFormComponent implements OnInit {
     console.log(this.usuario);
   }
 
+  controleInvalido(controle) {
+    return !controle.valid && controle.touched;
+  }
+
+  aplicaCssErro(controle) {
+    return {
+      'has-error': this.controleInvalido(controle),
+      'has-feedback': this.controleInvalido(controle)
+    };
+  }
+
 }
