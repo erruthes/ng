@@ -1,5 +1,5 @@
-import { Usuario } from './../../rotas/login/usuario';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-template-form',
@@ -13,7 +13,7 @@ export class TemplateFormComponent implements OnInit {
     email: null // 'eruthes@gmail.com'
   };
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +33,26 @@ export class TemplateFormComponent implements OnInit {
       'has-error': this.controleInvalido(controle),
       'has-feedback': this.controleInvalido(controle)
     };
+  }
+
+
+  consultaCEP(valorCep) {
+    console.log(valorCep);
+
+    valorCep = valorCep.replace(/\D/g, '');
+
+    if (valorCep !== '') {
+      const validaCep = /^[0-9]{8}$/;
+
+      if (validaCep.test(valorCep)) {
+
+        this.httpClient.get(`https://viacep.com.br/ws/${valorCep}/json`)
+          .subscribe(dados => {
+            console.log(dados);
+
+          });
+      }
+    }
   }
 
 }

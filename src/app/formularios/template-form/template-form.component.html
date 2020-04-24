@@ -169,7 +169,8 @@
         <input type="text" class="form-control" id="cep2" name="cep2" required
           [class.is-invalid]="controleInvalido(cep2)"
           ngModel
-          #cep2="ngModel">
+          #cep2="ngModel"
+          (blur)="consultaCEP(cep2.value)">
         <!-- <div>
           {{ cep2.className }}
         </div> -->
