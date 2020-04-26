@@ -19,10 +19,15 @@ export class TemplateFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form) {
+  onSubmit(form: NgForm) {
     console.log(form);
 
     console.log(this.usuario);
+
+    this.httpClient.post('https://httpbin.org/post', JSON.stringify(form.value))
+      .subscribe(dados => {
+        console.log(dados);
+      });
   }
 
   controleInvalido(controle) {
