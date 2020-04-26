@@ -1,3 +1,4 @@
+import { DataFormModule } from './data-form/data-form.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormulariosRoutingModule } from './formularios-routing.module';
 import { FormulariosComponent } from './formularios.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
-import { DataFormComponent } from './data-form/data-form.component';
+// import { DataFormComponent } from './data-form/data-form.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
 import { FormControlErroComponent } from './form-control-erro/form-control-erro.component';
 
@@ -17,7 +18,7 @@ import { FormControlErroComponent } from './form-control-erro/form-control-erro.
   declarations: [
     FormulariosComponent,
     TemplateFormComponent,
-    DataFormComponent,
+    // DataFormComponent,
     FormDebugComponent,
     FormControlErroComponent
   ],
@@ -26,6 +27,7 @@ import { FormControlErroComponent } from './form-control-erro/form-control-erro.
     FormsModule,
     FormulariosRoutingModule,
     HttpClientModule,
+    DataFormModule,
 
     MatInputModule
   ],
