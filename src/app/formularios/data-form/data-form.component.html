@@ -1,6 +1,6 @@
 <p>data-form works!</p>
 <!-- Bootstra 4 -->
-<form [formGroup]="formulario">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <div class="form-group row">
     <label for="nome" class="col-sm-1 col-form-label">Nome</label>
     <div class="col-sm-11">
