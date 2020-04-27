@@ -58,6 +58,8 @@ export class TemplateFormComponent implements OnInit {
           .subscribe(dados => {
             console.log(dados);
             this.populaDadosForm(dados, ngForm);
+
+            ngForm.reset();
           });
       }
     }
