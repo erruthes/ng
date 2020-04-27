@@ -6,12 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatInputModule} from '@angular/material/input';
 
+import { SharedModule } from './shared/shared.module';
 import { FormulariosRoutingModule } from './formularios-routing.module';
 import { FormulariosComponent } from './formularios.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 // import { DataFormComponent } from './data-form/data-form.component';
-import { FormDebugComponent } from './form-debug/form-debug.component';
-import { FormControlErroComponent } from './form-control-erro/form-control-erro.component';
+// import { FormDebugComponent } from './form-debug/form-debug.component';
+// import { FormControlErroComponent } from './form-control-erro/form-control-erro.component';
 
 
 @NgModule({
@@ -19,8 +20,8 @@ import { FormControlErroComponent } from './form-control-erro/form-control-erro.
     FormulariosComponent,
     TemplateFormComponent,
     // DataFormComponent,
-    FormDebugComponent,
-    FormControlErroComponent
+    // FormDebugComponent,
+    // FormControlErroComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +29,7 @@ import { FormControlErroComponent } from './form-control-erro/form-control-erro.
     FormulariosRoutingModule,
     HttpClientModule,
     DataFormModule,
+    SharedModule,
 
     MatInputModule
   ],

@@ -1,1 +1,30 @@
 <p>data-form works!</p>
+<!-- Bootstra 4 -->
+<form [formGroup]="formulario">
+  <div class="form-group row">
+    <label for="nome" class="col-sm-1 col-form-label">Nome</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" id="nome" formControlName="nome" required>
+      <div class="invalid-feedback">
+        O Nome é obrigatório.
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="email" class="col-sm-1 col-form-label">Email</label>
+    <div class="col-sm-11">
+      <input type="email" class="form-control" id="email" formControlName="email" required email >
+      <div class="invalid-feedback">
+        O Email é inválido.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="offset-sm-1 col-sm-11">
+      <button type="submit" class="btn btn-primary purple">Submit</button>
+    </div>
+  </div>
+  <app-form-debug [form]="formulario"></app-form-debug>
+</form>
+
