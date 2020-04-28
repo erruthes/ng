@@ -28,65 +28,65 @@
   </div>
 
 
-  <div>
+  <div formGroupName="endereco">
     <div class="form-row">
       <div class="form-group col-md-3">
         <label for="cep" class="col-form-label"
-          [class.text-danger]="controleInvalido('cep')">CEP</label>
+          [class.text-danger]="controleInvalido('endereco.cep')">CEP</label>
         <input type="text" class="form-control" id="cep" formControlName="cep"
-          [class.is-invalid]="controleInvalido('cep')">
+          [class.is-invalid]="controleInvalido('endereco.cep')">
         <div class="invalid-feedback">
           O CEP é obrigatório.
         </div>
       </div>
       <div class="form-group col-md-3">
         <label for="numero" class="col-form-label"
-          [class.text-danger]="controleInvalido('numero')">Número</label>
+          [class.text-danger]="controleInvalido('endereco.numero')">Número</label>
         <input type="text" class="form-control" id="numero" formControlName="numero"
-          [class.is-invalid]="controleInvalido('numero')">
+          [class.is-invalid]="controleInvalido('endereco.numero')">
         <div class="invalid-feedback">
           O Número é obrigatório.
         </div>
       </div>
       <div class="form-group col-md-6">
         <label for="complemento" class="col-form-label"
-          [class.text-danger]="controleInvalido('complemento')">Complemento</label>
+          [class.text-danger]="controleInvalido('endereco.complemento')">Complemento</label>
         <input type="text" class="form-control" id="complemento" formControlName="complemento"
-          [class.is-invalid]="controleInvalido('complemento')">
+          [class.is-invalid]="controleInvalido('endereco.complemento')">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-12">
         <label for="rua" class="col-form-label"
-          [class.text-danger]="controleInvalido('rua')">Rua</label>
+          [class.text-danger]="controleInvalido('endereco.rua')">Rua</label>
         <input type="text" class="form-control" id="rua" formControlName="rua"
-          [class.is-invalid]="controleInvalido('rua')">
+          [class.is-invalid]="controleInvalido('endereco.rua')">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-5">
         <label for="bairro" class="col-form-label"
-          [class.text-danger]="controleInvalido('bairro')">Bairro</label>
+          [class.text-danger]="controleInvalido('endereco.bairro')">Bairro</label>
         <input type="text" class="form-control" id="bairro" formControlName="bairro"
-          [class.is-invalid]="controleInvalido('bairro')">
+          [class.is-invalid]="controleInvalido('endereco.bairro')">
           <div class="invalid-feedback">
             O Bairro é obrigatório.
           </div>
         </div>
       <div class="form-group col-md-4">
         <label for="cidade" class="col-form-label"
-          [class.text-danger]="controleInvalido('cidade')">Cidade</label>
+          [class.text-danger]="controleInvalido('endereco.cidade')">Cidade</label>
         <input type="text" class="form-control" id="cidade" formControlName="cidade"
-          [class.is-invalid]="controleInvalido('cidade')">
+          [class.is-invalid]="controleInvalido('endereco.cidade')">
         <div class="invalid-feedback">
           O Cidade é obrigatório.
         </div>
       </div>
       <div class="form-group col-md-3">
         <label for="estado" class="col-form-label"
-          [class.text-danger]="controleInvalido('estado')">Estado</label>
+          [class.text-danger]="controleInvalido('endereco.estado')">Estado</label>
         <input type="text" class="form-control" id="estado" formControlName="estado"
-          [class.is-invalid]="controleInvalido('estado')">
+          [class.is-invalid]="controleInvalido('endereco.estado')">
         <div class="invalid-feedback">
           O Estado é obrigatório.
         </div>

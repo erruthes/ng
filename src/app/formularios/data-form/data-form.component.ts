@@ -36,13 +36,15 @@ export class DataFormComponent implements OnInit {
           Validators.email
         ]
       ],
-      cep: [null, Validators.required],
-      numero: [null],
-      complemento: [null, Validators.required],
-      rua: [null, Validators.required],
-      bairro: [null, Validators.required],
-      cidade: [null, Validators.required],
-      estado: [null, Validators.required]
+      endereco: this.formBuilder.group({
+        cep: [null, Validators.required],
+        numero: [null, Validators.required],
+        complemento: [null],
+        rua: [null, Validators.required],
+        bairro: [null, Validators.required],
+        cidade: [null, Validators.required],
+        estado: [null, Validators.required]
+      })
     });
   }
 
