@@ -34,7 +34,8 @@
         <label for="cep" class="col-form-label"
           [class.text-danger]="controleInvalido('endereco.cep')">CEP</label>
         <input type="text" class="form-control" id="cep" formControlName="cep"
-          [class.is-invalid]="controleInvalido('endereco.cep')">
+          [class.is-invalid]="controleInvalido('endereco.cep')"
+          (blur)="consultaCEP('endereco.cep')">
         <div class="invalid-feedback">
           O CEP é obrigatório.
         </div>
