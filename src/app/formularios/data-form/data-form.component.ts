@@ -84,4 +84,73 @@ export class DataFormComponent implements OnInit {
     }
   }
 
+
+  consultaCEP(campoCep: string) {
+
+    let valorCep = this.formulario.get(campoCep).value;
+
+    this.resetaDadosForm();
+
+    valorCep = valorCep.replace(/\D/g, '');
+
+    if (valorCep !== '') {
+      const validaCep = /^[0-9]{8}$/;
+
+      if (validaCep.test(valorCep)) {
+
+        this.httpClient.get(`https://viacep.com.br/ws/${valorCep}/json`)
+          .subscribe(dados => {
+            console.log(dados);
+            this.populaDadosForm(dados);
+          });
+      }
+    }
+  }
+
+
+  populaDadosForm(dados) {
+    //   ngForm.setValue({
+    //     nome2: formulario.value.nome2,
+    //     email2: formulario.value.email2,
+    //     endereco: {
+    //       cep2: dados.cep,
+    //       numero2: '',
+    //       complemento2: dados.complemento,
+    //       rua2: dados.logradouro,
+    //       bairro2: dados.bairro,
+    //       cidade2: dados.localidade,
+    //       estado2: dados.uf
+    //     }
+    //   });
+
+      // console.log(ngForm);
+
+      this.formulario.patchValue({
+        endereco: {
+          cep: dados.cep,
+          complemento: dados.complemento,
+          rua: dados.logradouro,
+          bairro: dados.bairro,
+          cidade: dados.localidade,
+          estado: dados.uf
+        }
+      });
+
+      // this.formulario.get('nome').setValue('Teste');
+    }
+
+    resetaDadosForm() {
+      this.formulario.patchValue({
+        endereco: {
+          cep: null,
+          complemento: null,
+          rua: null,
+          numero: null,
+          bairro: null,
+          cidade: null,
+          estad: null
+        }
+      });
+    }
+
 }
