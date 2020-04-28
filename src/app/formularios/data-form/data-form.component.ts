@@ -56,4 +56,23 @@ export class DataFormComponent implements OnInit {
     this.formulario.reset();
   }
 
+  controleInvalido(campo) {
+    const controle = this.formulario.get(campo);
+    return !controle.valid && controle.touched;
+  }
+
+  // aplicaCssErro(campo) {
+  //   return {
+  //     'has-error': this.controleInvalido(campo),
+  //     'has-feedback': this.controleInvalido(campo)
+  //   };
+  // }
+
+  emailInvalido(campo: string) {
+    const controle = this.formulario.get(campo);
+    if (controle.errors) {
+      return controle.errors.email;
+    }
+  }
+
 }

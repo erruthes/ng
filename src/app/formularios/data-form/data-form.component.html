@@ -2,22 +2,29 @@
 <!-- Bootstra 4 -->
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <div class="form-group row">
-    <label for="nome" class="col-sm-1 col-form-label">Nome</label>
+    <label for="nome" class="col-sm-1 col-form-label"
+    [class.text-danger]="controleInvalido('nome')">Nome</label>
     <div class="col-sm-11">
-      <input type="text" class="form-control" id="nome" formControlName="nome" required>
+      <input type="text" class="form-control" id="nome" formControlName="nome"
+        [class.is-invalid]="controleInvalido('nome')">
       <div class="invalid-feedback">
         O Nome é obrigatório.
       </div>
     </div>
   </div>
   <div class="form-group row">
-    <label for="email" class="col-sm-1 col-form-label">Email</label>
+    <label for="email" class="col-sm-1 col-form-label"
+      [class.text-danger]="controleInvalido('email')">Email</label>
     <div class="col-sm-11">
-      <input type="email" class="form-control" id="email" formControlName="email" required email >
+      <input type="email" class="form-control" id="email" formControlName="email"
+      [class.is-invalid]="controleInvalido('email')">
       <div class="invalid-feedback">
         O Email é inválido.
       </div>
-    </div>
+      <app-form-control-erro
+      [mostrarErro]="emailInvalido('email')"
+      msgErro="O formato do Email está inválido."></app-form-control-erro>
+</div>
   </div>
 
   <div class="form-group row">
