@@ -51,23 +51,42 @@ export class DataFormComponent implements OnInit {
   onSubmit() {
     console.log(this.formulario);
 
-    this.httpClient.post('https://httpbin.org/post',
-                        JSON.stringify(this.formulario.value))
-      .subscribe(dados => {
-        console.log(dados);
+    if (this.formulario.valid) {
+      this.httpClient.post('https://httpbin.org/post',
+                          JSON.stringify(this.formulario.value))
+        .subscribe(dados => {
+          console.log(dados);
 
-        // this.resetarFormulario();
-      },
-      (erro: any) => alert('Erro'));
+          // this.resetarFormulario();
+        },
+        (erro: any) => alert('Erro')
+      );
+    } else {
+      console.log('Formulário Inválido');
+      this.verificaValidacoesFormulario(this.formulario);
+    }
   }
 
+  verificaValidacoesFormulario(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(campo => {
+      console.log(campo);
+      const controle = formGroup.get(campo);
+
+      controle.markAsDirty();
+
+      if (controle instanceof FormGroup) {
+        this.verificaValidacoesFormulario(controle);
+      }
+    });
+
+  }
   resetarFormulario() {
     this.formulario.reset();
   }
 
   controleInvalido(campo) {
     const controle = this.formulario.get(campo);
-    return !controle.valid && controle.touched;
+    return !controle.valid && (controle.touched || controle.dirty);
   }
 
   // aplicaCssErro(campo) {
