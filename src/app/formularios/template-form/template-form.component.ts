@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 
+import { ConsultaCepService } from './../shared/services/consulta-cep.service';
+
 @Component({
   selector: 'app-template-form',
   templateUrl: './template-form.component.html',
@@ -14,7 +16,10 @@ export class TemplateFormComponent implements OnInit {
     email: null // 'eruthes@gmail.com'
   };
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private cepService: ConsultaCepService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -47,22 +52,11 @@ export class TemplateFormComponent implements OnInit {
 
     this.resetaDadosForm(ngForm);
 
-    valorCep = valorCep.replace(/\D/g, '');
-
-    if (valorCep !== '') {
-      const validaCep = /^[0-9]{8}$/;
-
-      if (validaCep.test(valorCep)) {
-
-        this.httpClient.get(`https://viacep.com.br/ws/${valorCep}/json`)
-          .subscribe(dados => {
-            console.log(dados);
-            this.populaDadosForm(dados, ngForm);
-
-            ngForm.reset();
-          });
-      }
+    if (valorCep != null && valorCep !== '') {
+      this.cepService.consultaCEP(valorCep)
+        .subscribe(dados => this.populaDadosForm(dados, ngForm));
     }
+
   }
 
   populaDadosForm(dados, ngForm: NgForm) {
