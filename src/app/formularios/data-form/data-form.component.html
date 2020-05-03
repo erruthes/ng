@@ -109,7 +109,20 @@
         O Cargo é obrigatório.
       </div>
     </div>
-</div>
+    <div class="form-group">
+      <div class="form-group col-md-3">
+        <label for="tecnologias" class="col-form-label"
+          [class.text-danger]="controleInvalido('tecnologias')">Tecnologias</label>
+        <select multiple type="text" class="form-control" id="tecnologias" formControlName="tecnologias"
+          [class.is-invalid]="controleInvalido('tecnologias')">
+          <option *ngFor="let tecnologia of tecnologias" [value]="tecnologia.nome" >{{ tecnologia.desc }}</option>
+        </select>
+        <div class="invalid-feedback">
+          O Tecnologia é obrigatório.
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <div class="form-group row">
@@ -117,6 +130,7 @@
       <button type="submit" class="btn btn-primary purple">Submit</button>
       <button type="button" class="btn" (click)="resetarFormulario()">Cancelar</button>
       <button type="button" class="btn" (click)="setCargo()">Setar Cargo</button>
+      <button type="button" class="btn" (click)="setTecnologias()">Setar Tecnologias</button>
     </div>
   </div>
   <app-form-debug [form]="formulario"></app-form-debug>
