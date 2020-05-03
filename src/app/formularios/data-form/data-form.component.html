@@ -86,8 +86,10 @@
       <div class="form-group col-md-3">
         <label for="estado" class="col-form-label"
           [class.text-danger]="controleInvalido('endereco.estado')">Estado</label>
-        <input type="text" class="form-control" id="estado" formControlName="estado"
+        <select type="text" class="form-control" id="estado" formControlName="estado"
           [class.is-invalid]="controleInvalido('endereco.estado')">
+          <option *ngFor="let estado of estados | async" [value]="estado.sigla" >{{ estado.nome }}</option>
+        </select>
         <div class="invalid-feedback">
           O Estado é obrigatório.
         </div>
