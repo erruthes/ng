@@ -29,4 +29,11 @@ export class DropdownService {
       { nome: 'python', desc: 'Python'},
     ];
   }
+
+  getNewsletters() {
+    return [
+      { nome: 'nao', desc: 'Não'},
+      { nome: 'sim', desc: 'Sim'},
+    ];
+  }
 }
