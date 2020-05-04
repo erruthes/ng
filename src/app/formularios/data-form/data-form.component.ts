@@ -73,7 +73,8 @@ export class DataFormComponent implements OnInit {
 
       cargo: [null],
       tecnologias: [null],
-      newsletter: [this.newsletters[0].nome]
+      newsletter: [this.newsletters[0].nome],
+      termos: [null, Validators.requiredTrue]
     });
   }
 
@@ -98,7 +99,7 @@ export class DataFormComponent implements OnInit {
 
   verificaValidacoesFormulario(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(campo => {
-      console.log(campo);
+      console.log('verificaValidacoesFormulario:' + campo);
       const controle = formGroup.get(campo);
 
       controle.markAsDirty();
