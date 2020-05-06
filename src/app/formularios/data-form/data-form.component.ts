@@ -1,8 +1,8 @@
 import { DropdownService } from './../shared/services/dropdown.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { EstadoBr } from './../shared/models/estado-br.model';
 import { ConsultaCepService } from './../shared/services/consulta-cep.service';
@@ -18,6 +18,7 @@ export class DataFormComponent implements OnInit {
   cargos: any[];
   tecnologias: any[];
   newsletters: any[];
+  frameworks = ['Angular', 'React', 'Vue', 'Sencha'];
   formulario: FormGroup;
 
   constructor(
@@ -74,16 +75,48 @@ export class DataFormComponent implements OnInit {
       cargo: [null],
       tecnologias: [null],
       newsletter: [this.newsletters[0].nome],
-      termos: [null, Validators.requiredTrue]
+      termos: [null, Validators.requiredTrue],
+      frameworks: this.buildFrameworks()
     });
+  }
+
+  buildFrameworks() {
+    const values = this.frameworks.map(v => new FormControl(false));
+
+    return this.formBuilder.array(values);
+
+    // return [
+    //   new FormControl(false),
+    //   new FormControl(false),
+    //   new FormControl(false),
+    //   new FormControl(false),
+    // ];
+  }
+
+  get formData() {
+    return this.formulario.get('frameworks') as FormArray;
+  }
+
+  mapCheckboxToNamedArray() {
+    let valueSubmit = Object.assign({}, this.formulario.value);
+
+    valueSubmit = Object.assign(valueSubmit, {
+      frameworks: valueSubmit.frameworks
+        .map((v, i) => v ? this.frameworks[i] : null)
+        .filter(v => v !== null)
+    });
+
+    return valueSubmit;
   }
 
   onSubmit() {
     console.log(this.formulario);
 
+    const valueSubmit = this.mapCheckboxToNamedArray();
+
     if (this.formulario.valid) {
       this.httpClient.post('https://httpbin.org/post',
-                          JSON.stringify(this.formulario.value))
+                          JSON.stringify(valueSubmit))
         .subscribe(dados => {
           console.log(dados);
 
