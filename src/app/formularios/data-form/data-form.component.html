@@ -167,9 +167,13 @@
                 [formControlName]="i"
                 [value]="">
               <label class="form-check-label" [for]="'framework_' + i">{{ frameworks[i] }}</label>
-            </div>
           </div>
-        </div>
+          <div class="invalid-feedback"><!-- Não funciona... -->
+            Selecione pelo menos 1 item
+          </div>
+          <app-form-control-erro msgErro="Selecione pelo menos 1 item." [mostrarErro]="!formulario.get('frameworks').valid"></app-form-control-erro>
+          </div>
+    </div>
 
       </div>
     </div>
