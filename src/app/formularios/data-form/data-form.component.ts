@@ -64,7 +64,11 @@ export class DataFormComponent implements OnInit {
         ]
       ],
       endereco: this.formBuilder.group({
-        cep: [null, Validators.required],
+        cep: [null, [
+          Validators.required,
+          FormValidations.cepValidator
+          ]
+        ],
         numero: [null, Validators.required],
         complemento: [null],
         rua: [null, Validators.required],
@@ -171,7 +175,7 @@ export class DataFormComponent implements OnInit {
   consultaCEP(campoCep: string) {
     const valorCep = this.formulario.get(campoCep).value;
 
-    this.resetaDadosForm();
+    // this.resetaDadosForm();
 
     if (valorCep != null && valorCep !== '') {
       this.cepService.consultaCEP(valorCep)
@@ -197,17 +201,18 @@ export class DataFormComponent implements OnInit {
 
       // console.log(ngForm);
 
-      this.formulario.patchValue({
-        endereco: {
-          cep: dados.cep,
-          complemento: dados.complemento,
-          rua: dados.logradouro,
-          bairro: dados.bairro,
-          cidade: dados.localidade,
-          estado: dados.uf
-        }
-      });
-
+      if (dados.cep) {
+        this.formulario.patchValue({
+          endereco: {
+            cep: dados.cep,
+            complemento: dados.complemento,
+            rua: dados.logradouro,
+            bairro: dados.bairro,
+            cidade: dados.localidade,
+            estado: dados.uf
+          }
+        });
+      }
       // this.formulario.get('nome').setValue('Teste');
     }
 
@@ -237,4 +242,26 @@ export class DataFormComponent implements OnInit {
     setTecnologias() {
       this.formulario.get('tecnologias').setValue(['python', 'c#']);
     }
-}
+
+    verificaValidTouched(campo: string) {
+      const controle = this.formulario.get(campo);
+      return (
+        !controle.valid
+        && (controle.touched || controle.dirty)
+      );
+    }
+
+    verificaRequired(campo: string) {
+      const controle = this.formulario.get(campo);
+      return (
+        controle.hasError('required')
+        && (controle.touched || controle.dirty)
+      );
+    }
+
+    verificaCepInvalido(campo: string) {
+      const controle = this.formulario.get(campo);
+      return controle.hasError('cepInvalido');
+    }
+
+  }
