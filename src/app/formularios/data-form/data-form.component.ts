@@ -1,3 +1,4 @@
+import { VerificaEmailService } from './services/verifica-email.service';
 import { DropdownService } from './../shared/services/dropdown.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
@@ -7,6 +8,7 @@ import { Observable, Subscription } from 'rxjs';
 import { EstadoBr } from './../shared/models/estado-br.model';
 import { ConsultaCepService } from './../shared/services/consulta-cep.service';
 import { FormValidations } from '../shared/form-validations';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-data-form',
@@ -26,7 +28,8 @@ export class DataFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private httpClient: HttpClient,
     private dropdownService: DropdownService,
-    private cepService: ConsultaCepService
+    private cepService: ConsultaCepService,
+    private verificaEmailService: VerificaEmailService
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +44,9 @@ export class DataFormComponent implements OnInit {
     //     console.log(dados);
     //     }
     //   );
+
+    // this.verificaEmailService.verificarEmail('email1@email.com').subscribe();
+
     this.estados = this.dropdownService.getEstadosBr();
 
     this.cargos = this.dropdownService.getCargos();
@@ -61,7 +67,7 @@ export class DataFormComponent implements OnInit {
         [
           Validators.required,
           Validators.email
-        ]
+        ], [this.validarEmail.bind(this)]
       ],
       confirmarEmail: [null, [FormValidations.equalsTo('email')]],
       endereco: this.formBuilder.group({
@@ -263,6 +269,11 @@ export class DataFormComponent implements OnInit {
     verificaCepInvalido(campo: string) {
       const controle = this.formulario.get(campo);
       return controle.hasError('cepInvalido');
+    }
+
+    validarEmail(formControl: FormControl) {
+      return this.verificaEmailService.verificarEmail(formControl.value)
+        .pipe(map(emailExiste => emailExiste ? { emailInvalido: true } : null));
     }
 
   }
