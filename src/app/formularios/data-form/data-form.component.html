@@ -23,15 +23,15 @@
         O Email é inválido.
       </div>
       <app-error-msg [control]="formulario.get('email')" label="Email"></app-error-msg>
-      <app-error-msg
+      <app-form-control-erro
         [mostrarErro]="formulario.get('email').status === 'PENDING'"
-        msgErro="Validando email..."></app-error-msg>
-      <app-error-msg
+        msgErro="Validando email..."></app-form-control-erro>
+      <app-form-control-erro
         [mostrarErro]="formulario.get('email').status === 'VALID'"
-        msgErro="Email válido."></app-error-msg>
-      <app-error-msg
+        msgErro="Email válido."></app-form-control-erro>
+      <app-form-control-erro
         [mostrarErro]="formulario.get('email').hasError('emailInvalido')"
-        msgErro="Email já cadastrado."></app-error-msg>
+        msgErro="Email já cadastrado."></app-form-control-erro>
     </div>
   </div>
   <div class="form-group row">
@@ -43,9 +43,9 @@
       <div class="invalid-feedback">
         O Confirmar Email é inválido.
       </div>
-      <app-error-msg
+      <app-form-control-erro
       [mostrarErro]="formulario.get('confirmarEmail').hasError('equalsTo')"
-      msgErro="Os Emails não são iguais."></app-error-msg>
+      msgErro="Os Emails não são iguais."></app-form-control-erro>
     </div>
   </div>
 
@@ -56,7 +56,7 @@
           [class.text-danger]="controleInvalido('endereco.cep')">CEP</label>
         <input type="text" class="form-control" id="cep" formControlName="cep"
           [class.is-invalid]="controleInvalido('endereco.cep')"
-          (blur)="consultaCEP('endereco.cep')">
+        > <!-- (blur)="consultaCEP('endereco.cep')" -->
         <div class="invalid-feedback" *ngIf="verificaRequired('endereco.cep')">
           O CEP é obrigatório.
         </div>
