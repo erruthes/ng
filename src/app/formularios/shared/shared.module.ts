@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 
 import { FormControlErroComponent } from './form-control-erro/form-control-erro.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
+import { ErrorMsgComponent } from './error-msg/error-msg.component';
 
 
 @NgModule({
   declarations: [
     FormControlErroComponent,
     FormDebugComponent,
+    ErrorMsgComponent,
   ],
   imports: [
     CommonModule
@@ -17,6 +19,7 @@ import { FormDebugComponent } from './form-debug/form-debug.component';
   exports: [
     FormControlErroComponent,
     FormDebugComponent,
+    ErrorMsgComponent
   ],
   providers: [
     DropdownService
