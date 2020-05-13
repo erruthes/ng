@@ -10,6 +10,7 @@
       <div class="invalid-feedback">
         O Nome é obrigatório.
       </div>
+      <app-error-msg [control]="formulario.get('nome')" label="Nome"></app-error-msg>
     </div>
   </div>
   <div class="form-group row">
@@ -21,18 +22,16 @@
       <div class="invalid-feedback">
         O Email é inválido.
       </div>
-      <app-form-control-erro
-        [mostrarErro]="emailInvalido('email')"
-        msgErro="O formato do Email está inválido."></app-form-control-erro>
-      <app-form-control-erro
+      <app-error-msg [control]="formulario.get('email')" label="Email"></app-error-msg>
+      <app-error-msg
         [mostrarErro]="formulario.get('email').status === 'PENDING'"
-        msgErro="Validando email..."></app-form-control-erro>
-      <app-form-control-erro
+        msgErro="Validando email..."></app-error-msg>
+      <app-error-msg
         [mostrarErro]="formulario.get('email').status === 'VALID'"
-        msgErro="Email válido."></app-form-control-erro>
-      <app-form-control-erro
+        msgErro="Email válido."></app-error-msg>
+      <app-error-msg
         [mostrarErro]="formulario.get('email').hasError('emailInvalido')"
-        msgErro="Email já cadastrado."></app-form-control-erro>
+        msgErro="Email já cadastrado."></app-error-msg>
     </div>
   </div>
   <div class="form-group row">
@@ -44,9 +43,9 @@
       <div class="invalid-feedback">
         O Confirmar Email é inválido.
       </div>
-      <app-form-control-erro
+      <app-error-msg
       [mostrarErro]="formulario.get('confirmarEmail').hasError('equalsTo')"
-      msgErro="Os Emails não são iguais."></app-form-control-erro>
+      msgErro="Os Emails não são iguais."></app-error-msg>
     </div>
   </div>
 
