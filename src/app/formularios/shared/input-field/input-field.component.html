@@ -1,0 +1,12 @@
+<div class="form-group row">
+  <label [attr.for]="id" class="col-sm-1 col-form-label"
+  [class.text-danger]="controleInvalido()">{{ label }}</label>
+  <input [type]="type" class="form-control" [id]="id"
+    [class.is-invalid]="controleInvalido()"
+    [readOnly]="!!isReadOnly"
+    [(ngModel)]="value">
+  <div class="invalid-feedback">
+    O Nome é obrigatório.
+  </div>
+  <app-error-msg [control]="control" [label]="label"></app-error-msg>
+</div>
