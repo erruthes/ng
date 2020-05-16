@@ -7,6 +7,7 @@ import { FormControlErroComponent } from './form-control-erro/form-control-erro.
 import { FormDebugComponent } from './form-debug/form-debug.component';
 import { ErrorMsgComponent } from './error-msg/error-msg.component';
 import { InputFieldComponent } from './input-field/input-field.component';
+// import { BaseFormComponent } from './base-form/base-form.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { InputFieldComponent } from './input-field/input-field.component';
     FormDebugComponent,
     ErrorMsgComponent,
     InputFieldComponent,
+    // BaseFormComponent,
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { InputFieldComponent } from './input-field/input-field.component';
     FormControlErroComponent,
     FormDebugComponent,
     ErrorMsgComponent,
-    InputFieldComponent
+    InputFieldComponent,
+    // BaseFormComponent
   ],
   providers: [
     DropdownService
