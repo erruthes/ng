@@ -9,20 +9,21 @@ import { EstadoBr } from './../shared/models/estado-br.model';
 import { ConsultaCepService } from './../shared/services/consulta-cep.service';
 import { FormValidations } from '../shared/form-validations';
 import { map, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
+import { BaseFormComponent } from '../shared/base-form/base-form.component';
 
 @Component({
   selector: 'app-data-form',
   templateUrl: './data-form.component.html',
   styleUrls: ['./data-form.component.css']
 })
-export class DataFormComponent implements OnInit {
+export class DataFormComponent extends BaseFormComponent implements OnInit {
 
   estados: Observable<EstadoBr[]>;
   cargos: any[];
   tecnologias: any[];
   newsletters: any[];
   frameworks = ['Angular', 'React', 'Vue', 'Sencha'];
-  formulario: FormGroup;
+  // formulario: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,7 +31,9 @@ export class DataFormComponent implements OnInit {
     private dropdownService: DropdownService,
     private cepService: ConsultaCepService,
     private verificaEmailService: VerificaEmailService
-  ) { }
+  ) {
+    super();
+   }
 
   ngOnInit(): void {
     // this.formulario = new FormGroup({
@@ -131,43 +134,44 @@ export class DataFormComponent implements OnInit {
     return valueSubmit;
   }
 
-  onSubmit() {
+  submit() {
     console.log(this.formulario);
 
     const valueSubmit = this.mapCheckboxToNamedArray();
 
-    if (this.formulario.valid) {
-      this.httpClient.post('https://httpbin.org/post',
+    console.log(valueSubmit);
+
+    this.httpClient.post('https://httpbin.org/post',
                           JSON.stringify(valueSubmit))
-        .subscribe(dados => {
-          console.log(dados);
+                    .subscribe(dados => {
+                      console.log(dados);
 
-          // this.resetarFormulario();
-        },
-        (erro: any) => alert('Erro')
-      );
-    } else {
-      console.log('Formulário Inválido');
-      this.verificaValidacoesFormulario(this.formulario);
-    }
+                      // this.resetarFormulario();
+                      },
+                      (erro: any) => alert('Erro')
+                    );
   }
 
-  verificaValidacoesFormulario(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(campo => {
-      console.log('verificaValidacoesFormulario:' + campo);
-      const controle = formGroup.get(campo);
+  // onSubmit() {
+  //   console.log(this.formulario);
 
-      controle.markAsDirty();
+  //   const valueSubmit = this.mapCheckboxToNamedArray();
 
-      if (controle instanceof FormGroup) {
-        this.verificaValidacoesFormulario(controle);
-      }
-    });
+  //   if (this.formulario.valid) {
+  //     this.httpClient.post('https://httpbin.org/post',
+  //                         JSON.stringify(valueSubmit))
+  //       .subscribe(dados => {
+  //         console.log(dados);
 
-  }
-  resetarFormulario() {
-    this.formulario.reset();
-  }
+  //         // this.resetarFormulario();
+  //       },
+  //       (erro: any) => alert('Erro')
+  //     );
+  //   } else {
+  //     console.log('Formulário Inválido');
+  //     this.verificaValidacoesFormulario(this.formulario);
+  //   }
+  // }
 
   controleInvalido(campo) {
     const controle = this.formulario.get(campo);
@@ -181,12 +185,6 @@ export class DataFormComponent implements OnInit {
   //   };
   // }
 
-  emailInvalido(campo: string) {
-    const controle = this.formulario.get(campo);
-    if (controle.errors) {
-      return controle.errors.email;
-    }
-  }
 
 
   consultaCEP(campoCep: string) {
@@ -260,21 +258,7 @@ export class DataFormComponent implements OnInit {
       this.formulario.get('tecnologias').setValue(['python', 'c#']);
     }
 
-    verificaValidTouched(campo: string) {
-      const controle = this.formulario.get(campo);
-      return (
-        !controle.valid
-        && (controle.touched || controle.dirty)
-      );
-    }
 
-    verificaRequired(campo: string) {
-      const controle = this.formulario.get(campo);
-      return (
-        controle.hasError('required')
-        && (controle.touched || controle.dirty)
-      );
-    }
 
     verificaCepInvalido(campo: string) {
       const controle = this.formulario.get(campo);
