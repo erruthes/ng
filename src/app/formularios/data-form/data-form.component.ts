@@ -1,3 +1,4 @@
+import { CidadeBr } from './../shared/models/cidade-br.model';
 import { VerificaEmailService } from './services/verifica-email.service';
 import { DropdownService } from './../shared/services/dropdown.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +19,9 @@ import { BaseFormComponent } from '../shared/base-form/base-form.component';
 })
 export class DataFormComponent extends BaseFormComponent implements OnInit {
 
-  estados: Observable<EstadoBr[]>;
+  estados: EstadoBr[];
+  // estados: Observable<EstadoBr[]>;
+  cidades: CidadeBr[];
   cargos: any[];
   tecnologias: any[];
   newsletters: any[];
@@ -50,7 +53,8 @@ export class DataFormComponent extends BaseFormComponent implements OnInit {
 
     // this.verificaEmailService.verificarEmail('email1@email.com').subscribe();
 
-    this.estados = this.dropdownService.getEstadosBr();
+    // this.estados = this.dropdownService.getEstadosBr();
+    this.dropdownService.getEstadosBr().subscribe(dados => this.estados = dados);
 
     this.cargos = this.dropdownService.getCargos();
 
@@ -94,15 +98,27 @@ export class DataFormComponent extends BaseFormComponent implements OnInit {
       frameworks: this.buildFrameworks()
     });
 
-    this.formulario.get('endereco.cep').statusChanges
+    const cep = this.formulario.get('endereco.cep');
+    cep.statusChanges
       .pipe(
         distinctUntilChanged(),
         tap(value => console.log('status CEP:', value)),
         switchMap(status => status === 'VALID'
-          ? this.cepService.consultaCEP(this.formulario.get('endereco.cep').value)
+          ? this.cepService.consultaCEP(cep.value)
           : EMPTY
           )
       ).subscribe(dados => dados ? this.populaDadosForm(dados) : {});
+
+    const estado = this.formulario.get('endereco.estado');
+    estado.valueChanges
+        .pipe(
+          tap(uf => console.log('Novo Estado: ', uf)),
+          map(uf => this.estados.filter(e => e.sigla === uf)),
+          map(estados => estados && estados.length > 0 ? estados[0].id : EMPTY),
+          switchMap((estadoId: number) => this.dropdownService.getCidadesBr(estadoId)),
+          tap(console.log)
+        )
+        .subscribe(cidades => this.cidades = cidades);
   }
 
   buildFrameworks() {
