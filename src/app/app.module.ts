@@ -30,6 +30,7 @@ import { AppRoutingModule } from './app.routing.module';
 // import { AlunosModule } from './alunos/alunos.module';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { FormulariosModule } from './formularios/formularios.module';
+import { RequestHttpModule } from './request-http/request-http.module';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FormulariosModule } from './formularios/formularios.module';
     // routing
     AppRoutingModule,
     // AlunosModule,
-    FormulariosModule
+    FormulariosModule,
+    RequestHttpModule
   ],
   providers: [
     LogService,
