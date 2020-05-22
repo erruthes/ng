@@ -60,7 +60,7 @@ import { RequestHttpModule } from './request-http/request-http.module';
     // routing
     AppRoutingModule,
     // AlunosModule,
-    FormulariosModule,
+    // FormulariosModule,
     RequestHttpModule
   ],
   providers: [
