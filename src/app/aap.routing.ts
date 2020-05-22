@@ -1,3 +1,4 @@
+import { RequestHttpComponent } from './request-http/request-http.component';
 import { CursoNaoEncontradoComponent } from './rotas/cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,7 +13,8 @@ const APP_ROUTES: Routes = [
   { path: 'curso/:id', component: CursoDetalheComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cursoNaoEncontrado', component: CursoNaoEncontradoComponent },
-  { path: '', component: HomeComponent }
+  // { path: '', component: HomeComponent }
+  { path: '', component: RequestHttpComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
