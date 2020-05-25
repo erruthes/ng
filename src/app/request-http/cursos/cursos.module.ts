@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,6 +10,7 @@ import { CursosListaComponent } from './cursos-lista/cursos-lista.component';
   declarations: [CursosListaComponent],
   imports: [
     CommonModule,
+    HttpClientModule,
     CursosRoutingModule
   ]
 })
