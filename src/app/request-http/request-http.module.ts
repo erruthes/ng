@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { RequestHttpComponent } from './request-http.component';
 import { RequestHttpRoutingModule } from './request-http-routing.module';
-import { CursosModule } from './cursos/cursos.module';
+// import { CursosModule } from './cursos/cursos.module';
+// import { UnsubscribeRxjsModule } from './unsubscribe-rxjs/unsubscribe-rxjs.module';
 
 
 
@@ -12,7 +13,8 @@ import { CursosModule } from './cursos/cursos.module';
   imports: [
     CommonModule,
     RequestHttpRoutingModule,
-    CursosModule
+    // CursosModule,
+    // UnsubscribeRxjsModule
   ],
   exports: [
     RequestHttpComponent
