@@ -1,8 +1,9 @@
-import { Observable } from 'rxjs';
+import { Observable, EMPTY, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 import { Curso } from './../curso.model';
 import { CursosService } from './../cursos.service';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cursos-lista',
@@ -15,6 +16,7 @@ export class CursosListaComponent implements OnInit {
 
   // Notação para um Observable
   cursos$: Observable<Curso[]>;
+  error$ = new Subject<boolean>();
 
   constructor(private cursosService: CursosService) { }
 
@@ -22,7 +24,18 @@ export class CursosListaComponent implements OnInit {
     // this.cursosService.list()
     // .subscribe(dados => this.cursos = dados);
 
-    this.cursos$ = this.cursosService.list();
+    this.onRefresh();
+  }
+
+  onRefresh() {
+    this.cursos$ = this.cursosService.list()
+    .pipe(
+      catchError(error => {
+        console.error(error);
+        this.error$.next(true);
+        return EMPTY;
+      })
+    );
   }
 
 }
