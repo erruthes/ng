@@ -4,6 +4,7 @@ import { CursosService } from './../cursos.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cursos-form',
@@ -25,9 +26,12 @@ export class CursosFormComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.params.subscribe(
-      (params: any) => {
-        const id = params.id;
+    this.route.params
+    .pipe(
+      map((params: any) => params.id)
+    )
+    .subscribe(
+      (id) => {
         console.log(id);
 
         const curso$ = this.service.loadById(id);
