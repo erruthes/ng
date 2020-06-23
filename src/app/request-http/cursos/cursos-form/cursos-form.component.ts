@@ -28,18 +28,11 @@ export class CursosFormComponent implements OnInit {
 
     this.route.params
     .pipe(
-      map((params: any) => params.id)
+      map((params: any) => params.id),
+      switchMap(id => this.service.loadById(id))
     )
-    .subscribe(
-      (id) => {
-        console.log(id);
+    .subscribe(curso => this.updateForm(curso));
 
-        const curso$ = this.service.loadById(id);
-        curso$.subscribe(curso => {
-          this.updateForm(curso);
-        });
-      }
-    );
 
     this.form = this.fb.group({
       id: [null],
