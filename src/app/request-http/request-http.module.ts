@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -19,7 +20,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     // CursosModule,
     // UnsubscribeRxjsModule
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    HttpClientModule
   ],
   exports: [
     RequestHttpComponent
