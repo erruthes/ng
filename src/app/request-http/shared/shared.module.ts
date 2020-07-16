@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlertModalComponent } from './alert-modal/alert-modal.component';
-
 import { ModalModule } from 'ngx-bootstrap/modal';
+
+import { AlertModalComponent } from './alert-modal/alert-modal.component';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 
 
 
 @NgModule({
-  declarations: [AlertModalComponent],
+  declarations: [
+    AlertModalComponent,
+    ConfirmModalComponent
+  ],
   imports: [
     CommonModule,
     ModalModule
@@ -16,7 +20,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AlertModalComponent
   ],
   entryComponents: [
-    AlertModalComponent
+    AlertModalComponent,
+    ConfirmModalComponent
   ]
 })
 export class SharedModule { }
