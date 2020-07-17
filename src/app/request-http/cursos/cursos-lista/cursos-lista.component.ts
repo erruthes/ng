@@ -9,6 +9,7 @@ import { AlertModalService } from './../../shared/alert-modal.service';
 import { AlertModalComponent } from './../../shared/alert-modal/alert-modal.component';
 import { Curso } from './../curso.model';
 import { CursosService } from './../cursos.service';
+import { Cursos2Service } from '../cursos2.service';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class CursosListaComponent implements OnInit {
   error$ = new Subject<boolean>();
 
   constructor(
-    private cursosService: CursosService,
+    private cursosService: Cursos2Service,
     private router: Router,
     private route: ActivatedRoute,
     private modalService: BsModalService,
