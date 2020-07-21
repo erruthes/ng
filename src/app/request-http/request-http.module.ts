@@ -9,6 +9,7 @@ import { RequestHttpRoutingModule } from './request-http-routing.module';
 import { SharedModule } from './shared/shared.module';
 // import { CursosModule } from './cursos/cursos.module';
 // import { UnsubscribeRxjsModule } from './unsubscribe-rxjs/unsubscribe-rxjs.module';
+import { UploadFileModule } from './upload-file/upload-file.module';
 
 
 
@@ -21,7 +22,8 @@ import { SharedModule } from './shared/shared.module';
     // CursosModule,
     // UnsubscribeRxjsModule
     ModalModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    UploadFileModule
   ],
   exports: [
     RequestHttpComponent
