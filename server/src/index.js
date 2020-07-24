@@ -17,7 +17,7 @@ const multipartMiddleware = multipart({ uploadDir: './uploads' });
 app.post('/upload', multipartMiddleware, (req, res) => {
   const files = req.files;
   console.log(files);
-  req.json({ message: files });
+  res.json({ message: files });
 });
 
 app.use((err, req, res, next) => res.json({ error: err.message }));
